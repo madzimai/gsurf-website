@@ -152,6 +152,89 @@
     </div>
 
 </section>
+<!-- Team Section -->
+
+<section class="bg-light py-5">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2>
+Our Team
+</h2>
+
+<p>
+Meet the people driving urban resilience research.
+</p>
+
+</div>
+
+
+<div class="row g-4">
+
+
+{% for member in team %}
+
+
+<div class="col-md-4">
+
+
+<div class="card shadow h-100">
+
+
+{% if member.photo %}
+
+<img src="{{ member.photo.url }}"
+class="card-img-top"
+alt="{{ member.name }}">
+
+{% endif %}
+
+
+<div class="card-body text-center">
+
+
+<h4>
+{{ member.name }}
+</h4>
+
+
+<h6 class="text-primary">
+{{ member.position }}
+</h6>
+
+
+<p>
+{{ member.biography }}
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+{% empty %}
+
+<p class="text-center">
+No team members added yet.
+</p>
+
+
+{% endfor %}
+
+
+</div>
+
+
+</div>
+
+</section>
 
 <!-- CTA -->
 <section class="bg-primary text-white py-5">

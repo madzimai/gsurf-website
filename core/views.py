@@ -7,7 +7,20 @@ def home(request):
 
 
 def about(request):
-    return render(request, "about.html")
+
+    from .models import TeamMember
+
+    team = TeamMember.objects.all()
+
+    context = {
+        "team": team
+    }
+
+    return render(
+        request,
+        "about.html",
+        context
+    )
 
 
 def services(request):

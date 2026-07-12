@@ -22,3 +22,29 @@ class Research(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class TeamMember(models.Model):
+
+    name = models.CharField(
+        max_length=100
+    )
+
+    position = models.CharField(
+        max_length=100
+    )
+
+    biography = models.TextField()
+
+    photo = models.ImageField(
+        upload_to="team/",
+        blank=True,
+        null=True
+    )
+
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
+    def __str__(self):
+        return self.name
