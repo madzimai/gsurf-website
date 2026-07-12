@@ -60,62 +60,31 @@
 
                 <div class="card-body">
 
-                    <form>
+                    {% if success %}
 
-                        <div class="mb-3">
+                    <div class="alert alert-success">
 
-                            <label class="form-label">
-                                Full Name
-                            </label>
+                        Thank you! Your message has been sent successfully.
 
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="John Doe">
+                    </div>
 
-                        </div>
+                    {% endif %}
 
-                        <div class="mb-3">
 
-                            <label class="form-label">
-                                Email Address
-                            </label>
+                    <form method="POST">
 
-                            <input
-                                type="email"
-                                class="form-control"
-                                placeholder="john@example.com">
+                        {% csrf_token %}
 
-                        </div>
 
-                        <div class="mb-3">
+                        {{ form.as_p }}
 
-                            <label class="form-label">
-                                Subject
-                            </label>
 
-                            <input
-                                type="text"
-                                class="form-control">
+                        <button class="btn btn-primary btn-lg">
 
-                        </div>
-
-                        <div class="mb-3">
-
-                            <label class="form-label">
-                                Message
-                            </label>
-
-                            <textarea
-                                rows="6"
-                                class="form-control"></textarea>
-
-                        </div>
-
-                        <button
-                            class="btn btn-primary btn-lg">
                             Send Message
+
                         </button>
+
 
                     </form>
 
