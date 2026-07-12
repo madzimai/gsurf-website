@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact - GSURF{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="bg-primary text-white py-5">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">Contact Us</h1>
+        <p class="lead">
+            We'd love to hear from you. Get in touch with our team.
+        </p>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="container py-5">
+
+    <div class="row">
+
+        <!-- Contact Information -->
+        <div class="col-lg-5">
+
+            <h2>Get In Touch</h2>
+
+            <p>
+                Have a question, partnership opportunity, or research inquiry?
+                Reach out to us using the details below.
+            </p>
+
+            <hr>
+
+            <h5>📍 Address</h5>
+            <p>
+                Harare, Zimbabwe
+            </p>
+
+            <h5>📞 Phone</h5>
+            <p>
+                +263 77 123 4567
+            </p>
+
+            <h5>📧 Email</h5>
+            <p>
+                info@gsurf.org
+            </p>
+
+            <h5>🌐 Website</h5>
+            <p>
+                www.gsurf.org
+            </p>
+
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+
+            <div class="card shadow">
+
+                <div class="card-body">
+
+                    <form>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="John Doe">
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                placeholder="john@example.com">
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Subject
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control">
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Message
+                            </label>
+
+                            <textarea
+                                rows="6"
+                                class="form-control"></textarea>
+
+                        </div>
+
+                        <button
+                            class="btn btn-primary btn-lg">
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Map Placeholder -->
+<section class="container pb-5">
+
+    <div class="card">
+
+        <div class="card-body text-center">
+
+            <h3>Location</h3>
+
+            <p>
+                Google Maps will be integrated here.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
