@@ -51,94 +51,90 @@
 </section>
 
 <!-- Featured Publications -->
+<!-- Featured Publications -->
+
 <section class="bg-light py-5">
 
-    <div class="container">
+<div class="container">
 
-        <h2 class="text-center mb-5">
-            Featured Publications
-        </h2>
+<h2 class="text-center mb-5">
+Latest Publications
+</h2>
 
-        <div class="row g-4">
 
-            <div class="col-md-4">
+<div class="row g-4">
 
-                <div class="card shadow h-100">
 
-                    <div class="card-body">
+{% for research in researches %}
 
-                        <h4>
-                            Climate Resilient Cities
-                        </h4>
 
-                        <p>
-                            Strategies for building sustainable urban
-                            communities.
-                        </p>
+<div class="col-md-4">
 
-                        <a href="#" class="btn btn-primary">
-                            Read Report
-                        </a>
 
-                    </div>
+<div class="card shadow h-100">
 
-                </div>
 
-            </div>
+<div class="card-body">
 
-            <div class="col-md-4">
 
-                <div class="card shadow h-100">
+<h4>
+{{ research.title }}
+</h4>
 
-                    <div class="card-body">
 
-                        <h4>
-                            Affordable Housing
-                        </h4>
+<p>
+{{ research.description }}
+</p>
 
-                        <p>
-                            Research on inclusive housing policies and
-                            urban development.
-                        </p>
 
-                        <a href="#" class="btn btn-primary">
-                            Read Report
-                        </a>
+<p class="text-muted">
 
-                    </div>
+Published:
+{{ research.publication_date }}
 
-                </div>
+</p>
 
-            </div>
 
-            <div class="col-md-4">
+{% if research.report %}
 
-                <div class="card shadow h-100">
+<a href="{{ research.report.url }}"
+class="btn btn-primary"
+target="_blank">
 
-                    <div class="card-body">
+Download Report
 
-                        <h4>
-                            Smart Cities
-                        </h4>
+</a>
 
-                        <p>
-                            Innovation and digital transformation for
-                            resilient cities.
-                        </p>
+{% endif %}
 
-                        <a href="#" class="btn btn-primary">
-                            Read Report
-                        </a>
 
-                    </div>
+</div>
 
-                </div>
 
-            </div>
+</div>
 
-        </div>
 
-    </div>
+</div>
+
+
+{% empty %}
+
+
+<div class="text-center">
+
+<h4>
+No research publications available yet.
+</h4>
+
+</div>
+
+
+{% endfor %}
+
+
+</div>
+
+</div>
 
 </section>
 
