@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Research
+from .models import Research, TeamMember, Service
+
 
 
 def home(request):
@@ -24,7 +25,18 @@ def about(request):
 
 
 def services(request):
-    return render(request, "services.html")
+
+    services = Service.objects.all()
+
+    context = {
+        "services": services
+    }
+
+    return render(
+        request,
+        "services.html",
+        context
+    )
 
 
 def research(request):
