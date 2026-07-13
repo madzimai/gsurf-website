@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ member.name }}{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+    <div class="row">
+
+        <div class="col-md-4">
+
+            {% if member.photo %}
+            <img
+                src="{{ member.photo.url }}"
+                class="img-fluid rounded shadow"
+                alt="{{ member.name }}">
+            {% endif %}
+
+        </div>
+
+        <div class="col-md-8">
+
+            <h1>{{ member.name }}</h1>
+
+            <h4 class="text-primary">
+                {{ member.position }}
+            </h4>
+
+            <hr>
+
+            <p>
+                {{ member.biography }}
+            </p>
+
+            <a href="{% url 'about' %}" class="btn btn-secondary">
+                ← Back to Team
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block title %}
+News - GSURF
+{% endblock %}
+
+
+{% block content %}
+
+
+<section class="bg-dark text-white py-5">
+
+<div class="container text-center">
+
+<h1>
+Latest News
+</h1>
+
+<p>
+Updates, research and announcements from GSURF.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section class="container py-5">
+
+
+<div class="row g-4">
+
+
+{% for article in articles %}
+
+
+<div class="col-md-4">
+
+
+<div class="card shadow h-100">
+
+
+{% if article.image %}
+
+<img src="{{ article.image.url }}"
+class="card-img-top">
+
+{% endif %}
+
+
+<div class="card-body">
+
+
+<h4>
+{{ article.title }}
+</h4>
+
+
+<p class="text-muted">
+
+{{ article.published_date }}
+
+</p>
+
+
+<p>
+
+{{ article.content|truncatewords:25 }}
+
+</p>
+
+
+<a href="#"
+class="btn btn-primary">
+
+Read More
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+{% empty %}
+
+<p>
+No news available.
+</p>
+
+
+{% endfor %}
+
+
+</div>
+
+
+</section>
+
+
+{% endblock %}
