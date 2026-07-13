@@ -1,6 +1,5 @@
-from django.shortcuts import render
-from .models import Research, TeamMember, Service
-
+from django.shortcuts import render, get_object_or_404
+from .models import Research, TeamMember, Service, News
 
 
 def home(request):
@@ -89,5 +88,32 @@ def contact(request):
         "contact.html",
         {
             "form": form
+        }
+    )
+def news(request):
+
+    articles = News.objects.filter(
+        is_published=True
+    ).order_by(
+        "-published_date"
+    )
+
+
+    return render(
+        request,
+        "news.html",
+        {
+            "articles": articles
+        }
+    )
+
+def team_detail(request, id):
+    member = get_object_or_404(TeamMember, id=id)
+
+    return render(
+        request,
+        "team_detail.html",
+        {
+            "member": member
         }
     )

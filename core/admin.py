@@ -1,5 +1,11 @@
 from django.contrib import admin
-from .models import Research, TeamMember, Service, ContactMessage
+from .models import (
+    Research,
+    TeamMember,
+    Service,
+    ContactMessage,
+    News
+)
 
 
 @admin.register(Research)
@@ -63,3 +69,26 @@ class ContactMessageAdmin(admin.ModelAdmin):
         "email",
         "subject"
     )
+
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "title",
+        "published_date",
+        "is_published"
+    )
+
+    list_filter = (
+        "is_published",
+        "published_date"
+    )
+
+    search_fields = (
+        "title",
+        "content"
+    )
+
+    prepopulated_fields = {
+        "slug": ("title",)
+    }
