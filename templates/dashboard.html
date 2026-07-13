@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+<h1>Dashboard</h1>
+
+<p>Welcome {{ request.user.username }}.</p>
+
+<div class="row mt-4">
+
+<div class="col-md-3">
+<div class="card text-center shadow">
+<div class="card-body">
+<h3>Research</h3>
+<a href="/admin/core/research/" class="btn btn-primary">
+Manage
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card text-center shadow">
+<div class="card-body">
+<h3>Projects</h3>
+<a href="/admin/core/project/" class="btn btn-primary">
+Manage
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card text-center shadow">
+<div class="card-body">
+<h3>News</h3>
+<a href="/admin/core/news/" class="btn btn-primary">
+Manage
+</a>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card text-center shadow">
+<div class="card-body">
+<h3>Messages</h3>
+<a href="/admin/core/contactmessage/" class="btn btn-primary">
+View
+</a>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
