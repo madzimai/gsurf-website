@@ -54,6 +54,7 @@ class ContactMessageAdmin(admin.ModelAdmin):
 
     list_display = (
         "name",
+        "phone",
         "email",
         "subject",
         "created_at",
@@ -69,6 +70,7 @@ class ContactMessageAdmin(admin.ModelAdmin):
         "name",
         "email",
         "subject"
+        "message",
     )
 
 @admin.register(News)

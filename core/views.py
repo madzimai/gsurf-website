@@ -73,7 +73,8 @@ def contact(request):
                 request,
                 "contact.html",
                 {
-                    "success": True
+                    "success":
+                    "Message sent successfully!"
                 }
             )
 
