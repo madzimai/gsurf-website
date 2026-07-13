@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Research, TeamMember, Service, News, Project
-
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     return render(request, "home.html")
@@ -145,3 +145,6 @@ def project_detail(request, slug):
             "project": project
         }
     )
+@login_required
+def dashboard(request):
+    return render(request, "dashboard.html")
