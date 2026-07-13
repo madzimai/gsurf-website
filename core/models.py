@@ -129,3 +129,30 @@ class News(models.Model):
 
     def __str__(self):
         return self.title
+    
+class Project(models.Model):
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True)
+
+    client = models.CharField(max_length=200)
+
+    location = models.CharField(max_length=200)
+
+    summary = models.TextField()
+
+    featured_image = models.ImageField(
+        upload_to="projects/",
+        blank=True,
+        null=True
+    )
+
+    start_date = models.DateField()
+
+    end_date = models.DateField()
+
+    is_featured = models.BooleanField(default=False)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
