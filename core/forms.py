@@ -10,6 +10,7 @@ class ContactForm(forms.ModelForm):
 
         fields = [
             "name",
+            "phone",
             "email",
             "subject",
             "message"
@@ -20,8 +21,9 @@ class ContactForm(forms.ModelForm):
 
             "name": forms.TextInput(
                 attrs={
-                    "class":"form-control",
-                    "placeholder":"Your name"
+                    "rows":5,
+                    "placeholder":
+                    "How can we help you?"
                 }
             ),
 
