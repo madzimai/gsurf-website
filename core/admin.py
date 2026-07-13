@@ -4,7 +4,8 @@ from .models import (
     TeamMember,
     Service,
     ContactMessage,
-    News
+    News,
+    Project
 )
 
 
@@ -87,6 +88,32 @@ class NewsAdmin(admin.ModelAdmin):
     search_fields = (
         "title",
         "content"
+    )
+
+    prepopulated_fields = {
+        "slug": ("title",)
+    }
+
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "title",
+        "client",
+        "location",
+        "start_date",
+        "end_date",
+        "is_featured"
+    )
+
+    list_filter = (
+        "is_featured",
+        "location"
+    )
+
+    search_fields = (
+        "title",
+        "client"
     )
 
     prepopulated_fields = {
