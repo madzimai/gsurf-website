@@ -147,4 +147,22 @@ def project_detail(request, slug):
     )
 @login_required
 def dashboard(request):
-    return render(request, "dashboard.html")
+
+    context = {
+        "team_count": TeamMember.objects.count(),
+        "research_count": Research.objects.count(),
+        "service_count": Service.objects.count(),
+        "message_count": ContactMessage.objects.count(),
+        "news_count": News.objects.count(),
+        "project_count": Project.objects.count(),
+
+        "recent_messages": ContactMessage.objects.order_by(
+            "-created_at"
+        )[:5],
+    }
+
+    return render(
+        request,
+        "dashboard.html",
+        context,
+    )

@@ -6,55 +6,118 @@
 
 <div class="container py-5">
 
-<h1>Dashboard</h1>
+<h1 class="mb-5">
+Dashboard
+</h1>
 
-<p>Welcome {{ request.user.username }}.</p>
+<div class="row g-4">
 
-<div class="row mt-4">
-
-<div class="col-md-3">
-<div class="card text-center shadow">
+<div class="col-md-4">
+<div class="card shadow text-center">
 <div class="card-body">
-<h3>Research</h3>
-<a href="/admin/core/research/" class="btn btn-primary">
-Manage
-</a>
+<h2>{{ team_count }}</h2>
+<p>Team Members</p>
 </div>
 </div>
 </div>
 
-<div class="col-md-3">
-<div class="card text-center shadow">
+<div class="col-md-4">
+<div class="card shadow text-center">
 <div class="card-body">
-<h3>Projects</h3>
-<a href="/admin/core/project/" class="btn btn-primary">
-Manage
-</a>
+<h2>{{ research_count }}</h2>
+<p>Research Papers</p>
 </div>
 </div>
 </div>
 
-<div class="col-md-3">
-<div class="card text-center shadow">
+<div class="col-md-4">
+<div class="card shadow text-center">
 <div class="card-body">
-<h3>News</h3>
-<a href="/admin/core/news/" class="btn btn-primary">
-Manage
-</a>
+<h2>{{ project_count }}</h2>
+<p>Projects</p>
 </div>
 </div>
 </div>
 
-<div class="col-md-3">
-<div class="card text-center shadow">
+<div class="col-md-4">
+<div class="card shadow text-center">
 <div class="card-body">
-<h3>Messages</h3>
-<a href="/admin/core/contactmessage/" class="btn btn-primary">
-View
-</a>
+<h2>{{ news_count }}</h2>
+<p>News Articles</p>
 </div>
 </div>
 </div>
+
+<div class="col-md-4">
+<div class="card shadow text-center">
+<div class="card-body">
+<h2>{{ service_count }}</h2>
+<p>Services</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card shadow text-center">
+<div class="card-body">
+<h2>{{ message_count }}</h2>
+<p>Messages</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<hr class="my-5">
+
+<h2>Recent Contact Messages</h2>
+
+<div class="table-responsive">
+
+<table class="table table-striped">
+
+<thead>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Subject</th>
+<th>Date</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for message in recent_messages %}
+
+<tr>
+
+<td>{{ message.name }}</td>
+
+<td>{{ message.email }}</td>
+
+<td>{{ message.subject }}</td>
+
+<td>{{ message.created_at|date:"M d, Y" }}</td>
+
+</tr>
+
+{% empty %}
+
+<tr>
+
+<td colspan="4">
+No messages found.
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
 
 </div>
 
