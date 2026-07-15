@@ -1,55 +1,193 @@
-.site-logo{
-    height:70px;
-    width:auto;
+/* ===================================
+   GSURF WEBSITE
+   Global South Urban Resilience Forum
+=================================== */
+
+/* Google Fonts */
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f8fafb;
+
+    color:#444;
+
+    overflow-x:hidden;
+
+}
+
+/*==================================
+COLORS
+==================================*/
+
+:root{
+
+    --primary:#0b4f8c;
+
+    --secondary:#2E7D32;
+
+    --accent:#7CB342;
+
+    --light:#F8FAFC;
+
+    --white:#ffffff;
+
+    --dark:#263238;
+
+    --gray:#6c757d;
+
+}
+
+/*==================================
+GENERAL
+==================================*/
+
+section{
+
+    padding:90px 0;
+
+}
+
+h1,h2,h3,h4,h5{
+
+    font-family:'Playfair Display',serif;
+
+    font-weight:700;
+
+    color:var(--dark);
+
+}
+
+p{
+
+    line-height:1.8;
+
+    color:#666;
+
+}
+
+a{
+
+    text-decoration:none;
+
     transition:.3s;
-}
-
-.site-logo:hover{
-    transform:scale(1.05);
-}
-
-@media (max-width:768px){
-
-.site-logo{
-    height:50px;
-}
 
 }
 
+img{
 
-.page-header{
+    max-width:100%;
 
-    position:relative;
+}
 
-    background-image:url("../images/gsurflogo.png");
+/*==================================
+NAVBAR
+==================================*/
+
+.custom-navbar{
+
+    background:white;
+
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+    padding:15px 0;
+    z-index:1000;
+
+}
+
+.logo{
+
+    height:75px;
+
+    transition:.3s;
+
+}
+
+.nav-link{
+
+    color:var(--dark)!important;
+
+    font-weight:600;
+
+    margin-left:15px;
+
+}
+
+.nav-link:hover{
+
+    color:var(--secondary)!important;
+
+}
+
+/*==================================
+BUTTONS
+==================================*/
+
+.btn-primary{
+
+    background:var(--primary);
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:14px 32px;
+
+}
+
+.btn-primary:hover{
+    background:var(--secondary);
+}
+
+.btn-success{
+
+    background:var(--secondary);
+
+    border:none;
+
+    border-radius:50px;
+
+}
+
+.btn-success:hover{
+
+    background:var(--primary);
+
+}
+
+/*==================================
+HERO
+==================================*/
+
+.hero{
+
+    min-height:100vh;
+
+    padding-top:100px;
+    background-image: url("../images/hero.jpg");
 
     background-size:cover;
 
     background-position:center;
 
-    min-height:380px;
+    position:relative;
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
-
-    text-align:center;
 
 }
 
-.overlay{
+.hero::before{
+
+    content:"";
 
     position:absolute;
 
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:100%;
+    inset:0;
 
     background:rgba(0,0,0,.55);
 
@@ -59,49 +197,281 @@
 
     position:relative;
 
-    z-index:10;
+    z-index:2;
 
     color:white;
-
-}
-
-.hero-logo{
-
-    width:140px;
-
-    margin-bottom:20px;
 
 }
 
 .hero-content h1{
 
-    font-size:52px;
+    font-size:60px;
 
-    font-weight:bold;
+    color:white;
 
 }
 
 .hero-content p{
 
+    color:#eee;
+
     font-size:20px;
 
 }
 
-.hero-content a{
+/*==================================
+CARDS
+==================================*/
 
-    color:white;
+.focus-card{
 
-    text-decoration:none;
+    border:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+    background:white;
+
+    height:100%;
 
 }
 
-/* Mobile */
+.focus-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+}
+
+.focus-card img{
+
+    height:250px;
+
+    width:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.focus-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.card-body{
+
+    padding:30px;
+
+}
+
+/*==================================
+SECTION TITLES
+==================================*/
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+    font-size:42px;
+
+}
+
+.section-title p{
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+/*==================================
+STATISTICS
+==================================*/
+
+.stats{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.stat-item{
+
+    text-align:center;
+
+}
+
+.stat-item h2{
+
+    color:white;
+
+    font-size:52px;
+
+}
+
+.stat-item p{
+
+    color:#ddd;
+
+}
+
+/*==================================
+FOOTER
+==================================*/
+
+.footer{
+
+    background:#1c2833;
+
+    color:white;
+
+    padding:70px 0 30px;
+
+}
+
+.footer h5{
+
+    color:white;
+
+}
+
+.footer p{
+
+    color:#ddd;
+
+}
+
+.footer-links{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.footer-links li{
+
+    margin-bottom:10px;
+
+}
+
+.footer-links a{
+
+    color:#ddd;
+
+}
+
+.footer-links a:hover{
+
+    color:#7CB342;
+
+}
+
+.social-icons a{
+
+    color:white;
+
+    font-size:26px;
+
+    margin-right:15px;
+
+}
+
+.social-icons a:hover{
+
+    color:#7CB342;
+
+}
+
+/*==================================
+WHATSAPP
+==================================*/
+
+.whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:34px;
+
+    z-index:9999;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:991px){
+
+.logo{
+
+    height:60px;
+
+}
+
+.hero{
+
+    height:80vh;
+
+}
+
+.hero-content h1{
+
+    font-size:42px;
+
+}
+
+.section-title h2{
+
+    font-size:34px;
+
+}
+
+}
 
 @media(max-width:768px){
 
-.hero-logo{
+.hero{
 
-    width:90px;
+    text-align:center;
 
 }
 
@@ -111,30 +481,31 @@
 
 }
 
-.page-header{
+.hero-content p{
 
-    min-height:260px;
+    font-size:18px;
+
+}
+
+.logo{
+
+    height:50px;
+
+}
+
+section{
+
+    padding:70px 0;
 
 }
 
 }
-
-.gsurf-page {
-
-    position: relative;
-
-    background:#ffffff;
-
-    min-height:100vh;
-
-}
+/* =================================
+   GSURF BACKGROUND WATERMARK
+================================= */
 
 
-/* GSURF watermark */
-
-.gsurf-page::before {
-
-    content:"";
+.gsurf-watermark{
 
     position:fixed;
 
@@ -142,38 +513,42 @@
 
     left:50%;
 
-    width:650px;
-
-    height:650px;
-
-    background-image:url("../images/gsurflogo.png");
-
-    background-repeat:no-repeat;
-
-    background-position:center;
-
-    background-size:contain;
-
-    opacity:0.08;
-
     transform:translate(-50%, -50%);
 
-    z-index:0;
+    z-index:-1;
 
     pointer-events:none;
+
+    opacity:0.05;
 
 }
 
 
-/* Keep content above watermark */
+.gsurf-watermark img{
 
-.gsurf-page main,
-.gsurf-page section,
-.gsurf-page .container {
+    width:650px;
+
+    height:auto;
+
+}
+
+
+
+/* Keep page content above watermark */
+
+ /* Prevent content hiding behind fixed navbar */
+
+main{
+
+    padding-top:100px;
+
+}
+footer,
+nav{
 
     position:relative;
 
-    z-index:2;
+    z-index:1;
 
 }
 
@@ -183,13 +558,107 @@
 
 @media(max-width:768px){
 
-    .gsurf-page::before {
+    .gsurf-watermark img{
 
         width:350px;
 
+    }
+
+}
+/* ===============================
+   SERVICES CAROUSEL
+================================ */
+
+
+.services-carousel{
+
+    padding:90px 0;
+    
+
+}
+
+
+
+.service-image{
+
+    height:500px;
+   width: 200px; ;
+    object-fit:cover;
+
+    border-radius:20px;
+
+}
+
+
+
+.carousel-item{
+
+    position:relative;
+
+}
+
+
+
+.carousel-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,0.45);
+
+    border-radius:20px;
+
+}
+
+
+
+.carousel-caption{
+
+    z-index:2;
+
+    bottom:50%;
+
+    transform:translateY(50%);
+
+}
+
+
+
+.carousel-caption h3{
+
+    color:hsl(207, 15%, 86%);
+
+    font-size:40px;
+
+}
+
+
+
+.carousel-caption p{
+
+    color:hsl(207, 15%, 86%);
+
+    font-size:18px;
+
+}
+
+
+
+@media(max-width:768px){
+
+    .service-image{
+
         height:350px;
 
-        opacity:0.06;
+    }
+
+
+    .carousel-caption h3{
+
+        font-size:28px;
 
     }
 
