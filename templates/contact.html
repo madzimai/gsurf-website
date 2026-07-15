@@ -1,96 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}Contact - GSURF{% endblock %}
+{% block title %}Contact | GSURF{% endblock %}
 
 {% block content %}
 
-<!-- Hero -->
-<section class="bg-dark text-white py-5">
-    <div class="container text-center">
-        <h1 class="display-4 fw-bold">Contact Us</h1>
-        <p class="lead">
-            We'd love to hear from you. Get in touch with our team.
-        </p>
-    </div>
-</section>
+<!-- ================= HERO ================= -->
 
-<!-- Contact -->
-<section class="container py-5">
+<section class="hero"
+style="background-image:url('{% static 'images/climate.jpeg' %}');">
 
-    <div class="row">
+    <div class="container">
 
-        <!-- Contact Information -->
-        <div class="col-lg-5">
+        <div class="hero-content text-center">
 
-            <h2>Get In Touch</h2>
+            <h1>Contact GSURF</h1>
 
-            <p>
-                Have a question, partnership opportunity, or research inquiry?
-                Reach out to us using the details below.
+            <p class="lead">
+
+                Let's work together to create resilient, inclusive and sustainable cities.
+
             </p>
-
-            <hr>
-
-            <h5>📍 Address</h5>
-            <p>
-                Harare, Zimbabwe
-            </p>
-
-            <h5>📞 Phone</h5>
-            <p>
-                +263 77 123 4567
-            </p>
-
-            <h5>📧 Email</h5>
-            <p>
-                info@gsurf.org
-            </p>
-
-            <h5>🌐 Website</h5>
-            <p>
-                www.gsurf.org
-            </p>
-
-        </div>
-
-        <!-- Contact Form -->
-        <div class="col-lg-7">
-
-            <div class="card shadow">
-
-                <div class="card-body">
-
-                    {% if success %}
-
-                    <div class="alert alert-success">
-
-                        Thank you! Your message has been sent successfully.
-
-                    </div>
-
-                    {% endif %}
-
-
-                    <form method="POST">
-
-                        {% csrf_token %}
-
-
-                        {{ form.as_p }}
-
-
-                        <button class="btn btn-primary btn-lg">
-
-                            Send Message
-
-                        </button>
-
-
-                    </form>
-
-                </div>
-
-            </div>
 
         </div>
 
@@ -98,22 +28,237 @@
 
 </section>
 
-<!-- Map Placeholder -->
-<section class="container pb-5">
 
-    <div class="card">
 
-        <div class="card-body text-center">
+<!-- ================= CONTACT ================= -->
 
-            <h3>Location</h3>
+<section>
 
-            <p>
-                Google Maps will be integrated here.
-            </p>
+<div class="container">
 
-        </div>
+<div class="section-title">
 
-    </div>
+<h2>
+
+Get In Touch
+
+</h2>
+
+<p>
+
+Whether you have a research inquiry, partnership proposal or general question,
+our team is ready to assist you.
+
+</p>
+
+</div>
+
+
+<div class="row g-5">
+
+
+
+
+<!-- Contact Information -->
+
+<div class="col-lg-5">
+
+
+<div class="contact-info-card">
+
+
+<h3>
+
+Contact Information
+
+</h3>
+
+<hr>
+
+
+
+<div class="contact-item">
+
+<i class="bi bi-telephone-fill"></i>
+
+<div>
+
+<h5>Phone</h5>
+
+<p>+263 77 123 4567</p>
+
+</div>
+
+</div>
+
+
+
+<div class="contact-item">
+
+<i class="bi bi-envelope-fill"></i>
+
+<div>
+
+<h5>Email</h5>
+
+<p>gsurf.forum@gmail.com</p>
+
+</div>
+
+</div>
+
+
+
+<div class="contact-item">
+
+<i class="bi bi-globe"></i>
+
+<div>
+
+<h5>Website</h5>
+
+<p>www.gsurf.org</p>
+
+</div>
+
+</div>
+
+
+
+<hr>
+
+
+
+<h5 class="mb-3">
+
+Follow GSURF
+
+</h5>
+
+
+<div class="social-icons">
+
+<a href="#"><i class="bi bi-facebook"></i></a>
+
+<a href="#"><i class="bi bi-linkedin"></i></a>
+
+<a href="#"><i class="bi bi-twitter-x"></i></a>
+
+<a href="#"><i class="bi bi-instagram"></i></a>
+
+<a href="#"><i class="bi bi-youtube"></i></a>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<!-- Contact Form -->
+
+<div class="col-lg-7">
+
+
+<div class="contact-form-card">
+
+
+{% if success %}
+
+<div class="alert alert-success">
+
+Thank you! Your message has been sent successfully.
+
+</div>
+
+{% endif %}
+
+
+
+<h3 class="mb-4">
+
+Send Us a Message
+
+</h3>
+
+
+<form method="POST">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+
+<button class="btn btn-success btn-lg">
+
+Send Message
+
+</button>
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- ================= MAP ================= -->
+
+<section class="pb-5">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Our Location
+
+</h2>
+
+</div>
+
+
+<div class="map-container">
+
+<iframe
+
+src="https://www.google.com/maps?q=Harare,Zimbabwe&output=embed"
+
+width="100%"
+
+height="450"
+
+style="border:0;"
+
+loading="lazy">
+
+</iframe>
+
+</div>
+
+
+</div>
 
 </section>
 

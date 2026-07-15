@@ -1,105 +1,170 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}Research - GSURF{% endblock %}
+{% block title %}Research | GSURF{% endblock %}
 
 {% block content %}
 
-<!-- Hero -->
-<section class="bg-dark text-white py-5">
-    <div class="container text-center">
+<!-- ================= HERO ================= -->
 
-        <h1 class="display-4 fw-bold">
-            Research & Publications
-        </h1>
+<section class="hero"
+style="background-image:url('{% static 'images/research.jpeg' %}');">
 
-        <p class="lead">
-            Advancing urban resilience through evidence-based research.
-        </p>
+    <div class="container">
 
-    </div>
-</section>
+        <div class="hero-content text-center">
 
-<!-- Introduction -->
-<section class="container py-5">
+            <h1>Research & Publications</h1>
 
-    <div class="row align-items-center">
+            <p class="lead">
 
-        <div class="col-lg-6">
+                Advancing urban resilience through innovative research,
+                evidence-based policy and sustainable development.
 
-            <h2>Our Research</h2>
-
-            <p>
-                GSURF conducts multidisciplinary research addressing urban
-                resilience, climate adaptation, governance, housing,
-                infrastructure, disaster risk reduction and sustainable
-                development across the Global South.
             </p>
 
         </div>
 
-        <div class="col-lg-6">
-
-            <img
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900"
-                class="img-fluid rounded shadow"
-                alt="Research">
-
-        </div>
-
     </div>
 
 </section>
 
-<!-- Featured Publications -->
-<!-- Featured Publications -->
 
-<section class="bg-light py-5">
+
+<!-- ================= INTRODUCTION ================= -->
+
+<section>
 
 <div class="container">
 
-<h2 class="text-center mb-5">
-Latest Publications
+<div class="row align-items-center g-5">
+
+<div class="col-lg-6">
+
+<img src="{% static 'images/Stadium.jpeg' %}"
+
+class="img-fluid rounded shadow"
+
+alt="Research">
+
+</div>
+
+
+<div class="col-lg-6">
+
+<div class="section-title text-start">
+
+<h2>
+
+Driving Knowledge for Better Cities
+
 </h2>
+
+</div>
+
+<p>
+
+GSURF undertakes multidisciplinary research that helps governments,
+communities, researchers and development partners build resilient,
+inclusive and sustainable cities.
+
+</p>
+
+<p>
+
+Our work focuses on climate resilience, urban governance,
+infrastructure planning, housing, disaster risk reduction,
+water security and smart cities.
+
+</p>
+
+<a href="{% url 'contact' %}"
+
+class="btn btn-success">
+
+Collaborate With Us
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- ================= PUBLICATIONS ================= -->
+
+<section class="bg-light">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Latest Publications
+
+</h2>
+
+<p>
+
+Explore our latest reports, publications and research outputs.
+
+</p>
+
+</div>
 
 
 <div class="row g-4">
 
-
 {% for research in researches %}
 
+<div class="col-lg-4 col-md-6">
 
-<div class="col-md-4">
+<div class="focus-card h-100">
 
+<img src="{% static 'images/climate.jpeg' %}"
 
-<div class="card shadow h-100">
+class="service-img"
 
+alt="{{ research.title }}">
 
 <div class="card-body">
 
-
 <h4>
+
 {{ research.title }}
+
 </h4>
 
-
 <p>
-{{ research.description }}
-</p>
 
+{{ research.description|truncatewords:25 }}
+
+</p>
 
 <p class="text-muted">
 
-Published:
+<i class="bi bi-calendar-event"></i>
+
 {{ research.publication_date }}
 
 </p>
 
-
 {% if research.report %}
 
 <a href="{{ research.report.url }}"
-class="btn btn-primary"
+
+class="btn btn-success"
+
 target="_blank">
+
+<i class="bi bi-download"></i>
 
 Download Report
 
@@ -107,30 +172,202 @@ Download Report
 
 {% endif %}
 
+</div>
 
 </div>
 
-
 </div>
-
-
-</div>
-
 
 {% empty %}
 
-
-<div class="text-center">
+<div class="col-12 text-center">
 
 <h4>
-No research publications available yet.
+
+No publications available yet.
+
 </h4>
 
 </div>
 
-
 {% endfor %}
 
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- ================= RESEARCH AREAS ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Research Areas
+
+</h2>
+
+<p>
+
+Our work spans multiple disciplines that contribute to resilient
+urban development.
+
+</p>
+
+</div>
+
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-buildings display-5 text-success"></i>
+
+<h4 class="mt-3">
+
+Urban Governance
+
+</h4>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3 col-md-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-cloud-sun display-5 text-success"></i>
+
+<h4 class="mt-3">
+
+Climate Change
+
+</h4>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3 col-md-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-droplet-half display-5 text-success"></i>
+
+<h4 class="mt-3">
+
+Water & Sanitation
+
+</h4>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3 col-md-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-house-heart display-5 text-success"></i>
+
+<h4 class="mt-3">
+
+Housing & Settlements
+
+</h4>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3 col-md-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-shield-check display-5 text-success"></i>
+
+<h4 class="mt-3">
+
+Disaster Risk Reduction
+
+</h4>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3 col-md-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-globe-africa display-5 text-success"></i>
+
+<h4 class="mt-3">
+
+Community Development
+
+</h4>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3 col-md-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-cpu display-5 text-success"></i>
+
+<h4 class="mt-3">
+
+Smart Cities
+
+</h4>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3 col-md-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-building display-5 text-success"></i>
+
+<h4 class="mt-3">
+
+Infrastructure
+
+</h4>
+
+</div>
+
+</div>
 
 </div>
 
@@ -138,89 +375,37 @@ No research publications available yet.
 
 </section>
 
-<!-- Research Areas -->
-<section class="container py-5">
 
-    <div class="text-center mb-5">
 
-        <h2>
-            Research Areas
-        </h2>
 
-    </div>
+<!-- ================= CTA ================= -->
 
-    <div class="row">
+<section class="cta-section">
 
-        <div class="col-md-6">
+<div class="container text-center">
 
-            <ul class="list-group">
+<h2>
 
-                <li class="list-group-item">
-                    Urban Governance
-                </li>
+Partner With Our Researchers
 
-                <li class="list-group-item">
-                    Climate Change
-                </li>
+</h2>
 
-                <li class="list-group-item">
-                    Disaster Risk Reduction
-                </li>
+<p>
 
-                <li class="list-group-item">
-                    Sustainable Infrastructure
-                </li>
+Join GSURF in developing innovative, research-driven solutions
+that create resilient cities and sustainable communities.
 
-            </ul>
+</p>
 
-        </div>
+<a href="{% url 'contact' %}"
 
-        <div class="col-md-6">
+class="btn btn-light btn-lg">
 
-            <ul class="list-group">
+Start a Partnership
 
-                <li class="list-group-item">
-                    Housing & Settlements
-                </li>
+</a>
 
-                <li class="list-group-item">
-                    Water & Sanitation
-                </li>
-
-                <li class="list-group-item">
-                    Smart Cities
-                </li>
-
-                <li class="list-group-item">
-                    Community Development
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- CTA -->
-<section class="bg-primary text-white py-5">
-
-    <div class="container text-center">
-
-        <h2>
-            Collaborate With Our Researchers
-        </h2>
-
-        <p class="lead">
-            Partner with GSURF on impactful urban resilience research.
-        </p>
-
-        <a href="/contact/" class="btn btn-light btn-lg">
-            Contact Our Team
-        </a>
-
-    </div>
+</div>
 
 </section>
 
