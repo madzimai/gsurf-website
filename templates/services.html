@@ -1,67 +1,149 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}Services - GSURF{% endblock %}
+{% block title %}Services | GSURF{% endblock %}
 
 {% block content %}
 
-<!-- Hero -->
-<section class="bg-dark text-white py-5">
-    <div class="container text-center">
+<!-- ================= HERO ================= -->
 
-        <h1 class="display-4 fw-bold">
-            Our Services
-        </h1>
+<section class="hero"
+style="background-image:url('{% static 'images/policy.jpeg' %}');">
 
-        <p class="lead">
-            Delivering research, policy support and urban resilience solutions.
-        </p>
+    <div class="container">
+
+        <div class="hero-content text-center">
+
+            <h1>Our Services</h1>
+
+            <p class="lead mt-4">
+
+                Delivering research, policy support and innovative urban resilience solutions across the Global South.
+
+            </p>
+
+        </div>
 
     </div>
+
 </section>
 
-<!-- Services -->
-<div class="row g-4">
 
+
+<!-- ================= SERVICES ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+What We Do
+
+</h2>
+
+<p>
+
+We provide research-driven services that strengthen communities, governments and organisations.
+
+</p>
+
+</div>
+
+<div class="row g-4">
 
 {% for service in services %}
 
+<div class="col-lg-4 col-md-6">
 
-<div class="col-md-4">
+<div class="focus-card h-100">
 
-<div class="card shadow h-100">
+{% if service.title == "Research & Innovation" %}
+
+<img src="{% static 'images/research.jpeg' %}"
+     class="card-img-top service-img"
+     alt="{{ service.title }}">
+
+{% elif service.title == "Water Resource Management" %}
+
+<img src="{% static 'images/water.jpeg' %}"
+     class="card-img-top service-img"
+     alt="{{ service.title }}">
+
+{% elif service.title == "Urban Policy & Governance" %}
+
+<img src="{% static 'images/policy.jpeg' %}"
+     class="card-img-top service-img"
+     alt="{{ service.title }}">
+
+{% elif service.title == "Climate Resilience" %}
+
+<img src="{% static 'images/climate.jpeg' %}"
+     class="card-img-top service-img"
+     alt="{{ service.title }}">
+
+{% elif service.title == "Urban Development" %}
+
+<img src="{% static 'images/uburn_.jpeg' %}"
+     class="card-img-top service-img"
+     alt="{{ service.title }}">
+
+{% elif service.title == "Sustainable Infrastructure" %}
+
+<img src="{% static 'images/Stadium.jpeg' %}"
+     class="card-img-top service-img"
+     alt="{{ service.title }}">
+
+{% else %}
+
+<img src="{% static 'images/Future.jpeg' %}"
+     class="card-img-top service-img"
+     alt="{{ service.title }}">
+
+{% endif %}
+
 
 <div class="card-body text-center">
 
 
 {% if service.icon %}
 
-<i class="bi {{ service.icon }} display-4 text-primary"></i>
+<i class="bi {{ service.icon }} service-icon"></i>
 
 {% endif %}
 
 
-<h3 class="mt-3">
+<h4 class="mt-3">
+
 {{ service.title }}
-</h3>
+
+</h4>
 
 
 <p>
+
 {{ service.description }}
+
 </p>
 
-
 </div>
 
 </div>
-
 </div>
-
 
 {% empty %}
 
-<p class="text-center">
-No services available.
+<div class="col-12 text-center">
+
+<p>
+
+No services available yet.
+
 </p>
+
+</div>
 
 
 {% endfor %}
@@ -69,63 +151,187 @@ No services available.
 
 </div>
 
-<!-- Process -->
-<section class="bg-light py-5">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-            <h2>How We Work</h2>
-        </div>
-
-        <div class="row text-center">
-
-            <div class="col-md-3">
-                <h1 class="text-primary">1</h1>
-                <h5>Consultation</h5>
-                <p>Understanding client needs and project objectives.</p>
-            </div>
-
-            <div class="col-md-3">
-                <h1 class="text-primary">2</h1>
-                <h5>Research</h5>
-                <p>Collecting and analysing data using best practices.</p>
-            </div>
-
-            <div class="col-md-3">
-                <h1 class="text-primary">3</h1>
-                <h5>Implementation</h5>
-                <p>Delivering practical and sustainable solutions.</p>
-            </div>
-
-            <div class="col-md-3">
-                <h1 class="text-primary">4</h1>
-                <h5>Evaluation</h5>
-                <p>Monitoring impact and providing continuous support.</p>
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-<!-- CTA -->
-<section class="bg-success text-white py-5">
 
-    <div class="container text-center">
 
-        <h2>Need Our Expertise?</h2>
+<!-- ================= HOW WE WORK ================= -->
 
-        <p class="lead">
-            Let's work together to build resilient and sustainable communities.
-        </p>
+<section class="bg-light">
 
-        <a href="/contact/" class="btn btn-light btn-lg">
-            Request a Consultation
-        </a>
+<div class="container">
 
-    </div>
+
+<div class="section-title">
+
+<h2>
+
+How We Work
+
+</h2>
+
+<p>
+
+Our collaborative approach ensures sustainable impact.
+
+</p>
+
+</div>
+
+
+
+<div class="row text-center gy-4">
+
+
+<div class="col-lg-3">
+
+<div class="process-box">
+
+<div class="process-number">
+
+1
+
+</div>
+
+<h4>
+
+Consultation
+
+</h4>
+
+<p>
+
+Understanding stakeholder needs and defining project objectives.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3">
+
+<div class="process-box">
+
+<div class="process-number">
+
+2
+
+</div>
+
+<h4>
+
+Research
+
+</h4>
+
+<p>
+
+Collecting, analysing and interpreting quality data.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3">
+
+<div class="process-box">
+
+<div class="process-number">
+
+3
+
+</div>
+
+<h4>
+
+Implementation
+
+</h4>
+
+<p>
+
+Transforming research into practical and sustainable solutions.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3">
+
+<div class="process-box">
+
+<div class="process-number">
+
+4
+
+</div>
+
+<h4>
+
+Impact
+
+</h4>
+
+<p>
+
+Monitoring, evaluation and continuous improvement.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta-section">
+
+<div class="container text-center">
+
+<h2>
+
+Let's Build Better Cities Together
+
+</h2>
+
+<p>
+
+Partner with GSURF to deliver resilient, inclusive and sustainable urban solutions.
+
+</p>
+
+<a href="{% url 'contact' %}"
+
+class="btn btn-light btn-lg">
+
+Contact Us
+
+</a>
+
+</div>
 
 </section>
 

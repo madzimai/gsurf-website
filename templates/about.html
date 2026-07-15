@@ -1,103 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
 
-
-
+{% block title %}About GSURF{% endblock %}
 
 {% block content %}
 
-<!-- Hero -->
-<section class="bg-dark text-white py-5">
-    <div class="container text-center">
-        <h1 class="display-4 fw-bold">About GSURF</h1>
-        <p class="lead">
-            Building resilient, inclusive and sustainable cities through
-            research, collaboration and innovation.
-        </p>
-    </div>
-</section>
+<!-- ================= HERO ================= -->
 
-<!-- About -->
-<section class="container py-5">
-
-    <div class="row align-items-center">
-
-        <div class="col-lg-6">
-
-            <img
-                src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=900"
-                class="img-fluid rounded shadow"
-                alt="Team">
-
-        </div>
-
-        <div class="col-lg-6">
-
-            <h2>Who We Are</h2>
-
-            <p>
-                The Global South Urban Resilience Forum (GSURF) is dedicated to
-                promoting sustainable urban development through research,
-                policy engagement, knowledge sharing and strategic partnerships.
-            </p>
-
-            <p>
-                We collaborate with governments, universities, civil society,
-                development partners and local communities to strengthen
-                resilience across cities in the Global South.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- Mission & Vision -->
-<section class="bg-light py-5">
+<section class="hero"
+style="background-image:url('{% static 'images/Inclusive.jpeg' %}');">
 
     <div class="container">
 
-        <div class="row">
+        <div class="hero-content text-center">
 
-            <div class="col-md-6">
+            <h1>About GSURF</h1>
 
-                <div class="card shadow h-100">
+            <p class="lead">
 
-                    <div class="card-body">
+                Building resilient, inclusive and sustainable cities through
+                research, collaboration and innovation.
 
-                        <h3>Our Mission</h3>
-
-                        <p>
-                            To advance resilient urban development through
-                            research, innovation, policy support and
-                            capacity building.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-6">
-
-                <div class="card shadow h-100 bg-primary text-white">
-
-                    <div class="card-body">
-
-                        <h3>Our Vision</h3>
-
-                        <p>
-                            A future where cities across the Global South
-                            are resilient, inclusive, sustainable and
-                            prosperous.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
+            </p>
 
         </div>
 
@@ -105,160 +29,396 @@
 
 </section>
 
-<!-- Core Values -->
-<section class="container py-5">
 
-    <div class="text-center mb-5">
-        <h2>Our Core Values</h2>
-    </div>
 
-    <div class="row g-4">
+<!-- ================= WHO WE ARE ================= -->
 
-        <div class="col-md-3">
-            <div class="card h-100 text-center shadow-sm">
-                <div class="card-body">
-                    <h5>Integrity</h5>
-                    <p>We uphold transparency and accountability.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card h-100 text-center shadow-sm">
-                <div class="card-body">
-                    <h5>Innovation</h5>
-                    <p>We embrace creative solutions to urban challenges.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card h-100 text-center shadow-sm">
-                <div class="card-body">
-                    <h5>Collaboration</h5>
-                    <p>Working together for lasting impact.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card h-100 text-center shadow-sm">
-                <div class="card-body">
-                    <h5>Sustainability</h5>
-                    <p>Creating resilient cities for future generations.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-<!-- Team Section -->
-
-<section class="bg-light py-5">
+<section>
 
 <div class="container">
 
-<div class="text-center mb-5">
+<div class="row align-items-center g-5">
 
-<h2>
-Our Team
-</h2>
+<div class="col-lg-6">
 
-<p>
-Meet the people driving urban resilience research.
-</p>
+<img src="{% static 'images/Inclusive.jpeg' %}"
+
+class="img-fluid rounded shadow"
+
+alt="GSURF">
 
 </div>
 
 
+
+<div class="col-lg-6">
+
+<div class="section-title text-start">
+
+<h2>
+
+Who We Are
+
+</h2>
+
+</div>
+
+<p>
+
+The Global South Urban Resilience Forum (GSURF) is a multidisciplinary
+platform committed to strengthening urban resilience through research,
+knowledge sharing, innovation and strategic partnerships.
+
+</p>
+
+<p>
+
+We collaborate with governments, universities, civil society,
+development partners and local communities to create sustainable,
+inclusive and climate-resilient cities across the Global South.
+
+</p>
+
+<a href="{% url 'contact' %}"
+
+class="btn btn-success">
+
+Partner With Us
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= MISSION & VISION ================= -->
+
+<section class="bg-light">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Mission & Vision
+
+</h2>
+
+</div>
+
 <div class="row g-4">
 
+<div class="col-lg-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-bullseye display-4 text-success"></i>
+
+<h3 class="mt-3">
+
+Our Mission
+
+</h3>
+
+<p>
+
+To advance resilient urban development through research,
+innovation, policy support, partnerships and capacity building.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-eye display-4 text-success"></i>
+
+<h3 class="mt-3">
+
+Our Vision
+
+</h3>
+
+<p>
+
+A future where cities across the Global South are resilient,
+inclusive, sustainable and prosperous.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= CORE VALUES ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Our Core Values
+
+</h2>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-shield-check display-5 text-success"></i>
+
+<h4 class="mt-3">
+
+Integrity
+
+</h4>
+
+<p>
+
+We uphold transparency, ethics and accountability.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3 col-md-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-lightbulb display-5 text-success"></i>
+
+<h4 class="mt-3">
+
+Innovation
+
+</h4>
+
+<p>
+
+Developing creative solutions for urban challenges.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3 col-md-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-people display-5 text-success"></i>
+
+<h4 class="mt-3">
+
+Collaboration
+
+</h4>
+
+<p>
+
+Building partnerships that create lasting impact.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-3 col-md-6">
+
+<div class="process-box text-center">
+
+<i class="bi bi-globe2 display-5 text-success"></i>
+
+<h4 class="mt-3">
+
+Sustainability
+
+</h4>
+
+<p>
+
+Creating resilient cities for future generations.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= TEAM ================= -->
+
+<section class="bg-light">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Meet Our Team
+
+</h2>
+
+<p>
+
+The professionals driving GSURF's mission.
+
+</p>
+
+</div>
+
+<div class="row g-4">
 
 {% for member in team %}
 
+<div class="col-lg-4 col-md-6">
 
-<div class="col-md-4">
-
-
-<div class="card shadow h-100">
-
+<div class="focus-card h-100">
 
 {% if member.photo %}
 
 <img src="{{ member.photo.url }}"
-class="card-img-top"
+class="service-img"
+alt="{{ member.name }}">
+
+{% else %}
+
+<img src="{% static 'images/research.jpeg' %}"
+class="service-img"
 alt="{{ member.name }}">
 
 {% endif %}
 
-
 <div class="card-body text-center">
 
-
 <h4>
-    <a href="{% url 'team_detail' member.id %}" class="text-decoration-none">
-        {{ member.name }}
-    </a>
+
+{{ member.name }}
+
 </h4>
 
-<a href="{% url 'team_detail' member.id %}"
-   class="btn btn-outline-primary mt-3">
-    View Profile
-</a>
+<h6 class="text-success">
 
-<h6 class="text-primary">
 {{ member.position }}
+
 </h6>
 
-
 <p>
-{{ member.biography }}
+
+{{ member.biography|truncatewords:25 }}
+
 </p>
 
+<a href="{% url 'team_detail' member.id %}"
+
+class="btn btn-success">
+
+View Profile
+
+</a>
 
 </div>
 
-
 </div>
 
-
 </div>
-
 
 {% empty %}
 
-<p class="text-center">
-No team members added yet.
-</p>
+<div class="col-12 text-center">
 
+<h4>
 
-{% endfor %}
+Our team profiles will be available soon.
 
+</h4>
 
 </div>
 
+{% endfor %}
+
+</div>
 
 </div>
 
 </section>
 
-<!-- CTA -->
-<section class="bg-primary text-white py-5">
 
-    <div class="container text-center">
 
-        <h2>Become a Partner</h2>
+<!-- ================= CTA ================= -->
 
-        <p class="lead">
-            Join us in shaping resilient cities across the Global South.
-        </p>
+<section class="cta-section">
 
-        <a href="/contact/" class="btn btn-light btn-lg">
-            Contact Us
-        </a>
+<div class="container text-center">
 
-    </div>
+<h2>
+
+Join Our Mission
+
+</h2>
+
+<p>
+
+Work with GSURF to advance resilient urban development,
+research and sustainable cities across the Global South.
+
+</p>
+
+<a href="{% url 'contact' %}"
+
+class="btn btn-light btn-lg">
+
+Become a Partner
+
+</a>
+
+</div>
 
 </section>
 
