@@ -7,7 +7,7 @@ from django.contrib.sitemaps.views import sitemap
 
 from core.sitemaps import StaticViewSitemap
 
-itemaps = {
+sitemaps = {
 
     'static': StaticViewSitemap(),
 
