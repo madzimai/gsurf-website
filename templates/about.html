@@ -313,13 +313,13 @@ The professionals driving GSURF's mission.
 
 </div>
 
-<div class="row g-4">
+<div class="row g-5">
 
 {% for member in team %}
 
 <div class="col-lg-4 col-md-6">
 
-<div class="focus-card h-100">
+<div class="focus-card " style="height: 100%;">
 
 {% if member.photo %}
 
@@ -343,17 +343,11 @@ alt="{{ member.name }}">
 
 </h4>
 
-<h6 class="text-success">
+<!-- <h6 class="text-success">
 
 {{ member.position }}
 
-</h6>
-
-<p>
-
-{{ member.biography|truncatewords:25 }}
-
-</p>
+</h6> -->
 
 <a href="{% url 'team_detail' member.id %}"
 
