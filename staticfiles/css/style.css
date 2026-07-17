@@ -194,3 +194,42 @@
     }
 
 }
+/* ===========================
+   TEAM SECTION
+=========================== */
+
+.team-card{
+    border-radius:20px;
+    overflow:hidden;
+    transition:all .3s ease;
+    background:#fff;
+}
+
+.team-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+}
+
+.team-photo{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    object-position:center top;
+    display:block;
+}
+
+.team-card .card-body{
+    padding:25px;
+}
+
+.team-card h4{
+    color:#1c2b36;
+}
+
+.team-card .btn{
+    margin-top:10px;
+}
+
+.team-card p{
+    min-height:80px;
+}
