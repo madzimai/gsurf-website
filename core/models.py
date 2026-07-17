@@ -24,6 +24,9 @@ class Research(models.Model):
         return self.title
 
 
+from django.db import models
+
+
 class TeamMember(models.Model):
 
     name = models.CharField(
@@ -31,10 +34,12 @@ class TeamMember(models.Model):
     )
 
     position = models.CharField(
-        max_length=100
+        max_length=150
     )
 
-    biography = models.TextField()
+    biography = models.TextField(
+        help_text="Supports paragraphs. Use separate fields below for links."
+    )
 
     photo = models.ImageField(
         upload_to="team/",
@@ -42,14 +47,63 @@ class TeamMember(models.Model):
         null=True
     )
 
+    email = models.EmailField(
+        blank=True
+    )
+
+    phone = models.CharField(
+        max_length=20,
+        blank=True
+    )
+
+    linkedin = models.URLField(
+        blank=True,
+        verbose_name="LinkedIn Profile"
+    )
+
+    google_scholar = models.URLField(
+        blank=True,
+        verbose_name="Google Scholar"
+    )
+
+    researchgate = models.URLField(
+        blank=True,
+        verbose_name="ResearchGate"
+    )
+
+    orcid = models.URLField(
+        blank=True,
+        verbose_name="ORCID"
+    )
+
+    website = models.URLField(
+        blank=True,
+        verbose_name="Personal Website"
+    )
+
+    expertise = models.CharField(
+        max_length=255,
+        blank=True,
+        help_text="Example: Urban Planning, Climate Change, GIS"
+    )
+
+    display_order = models.PositiveIntegerField(
+        default=0
+    )
+
+    is_active = models.BooleanField(
+        default=True
+    )
+
     created_at = models.DateTimeField(
         auto_now_add=True
     )
 
+    class Meta:
+        ordering = ["display_order", "name"]
+
     def __str__(self):
-        return self.name
-
-
+        return f"{self.name} - {self.position}"
 class Service(models.Model):
 
     title = models.CharField(

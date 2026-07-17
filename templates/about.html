@@ -293,97 +293,80 @@ Creating resilient cities for future generations.
 
 <!-- ================= TEAM ================= -->
 
-<section class="bg-light">
+<section class="py-5 bg-light">
 
-<div class="container">
+    <div class="container">
 
-<div class="section-title">
+        <div class="section-title text-center mb-5">
 
-<h2>
+            <h2>Meet Our Team</h2>
 
-Meet Our Team
+            <p class="text-muted">
+                Meet the professionals driving GSURF's mission across the Global South.
+            </p>
 
-</h2>
+        </div>
 
-<p>
+        <div class="row g-4 justify-content-center">
 
-The professionals driving GSURF's mission.
+            {% for member in team %}
 
-</p>
+            <div class="col-xl-4 col-lg-4 col-md-6">
 
-</div>
+                <div class="card team-card h-100 border-0 shadow">
 
-<div class="row g-5">
+                    {% if member.photo %}
+                        <img src="{{ member.photo.url }}"
+                             class="team-photo"
+                             alt="{{ member.name }}">
+                    {% else %}
+                        <img src="{% static 'images/research.jpeg' %}"
+                             class="team-photo"
+                             alt="{{ member.name }}">
+                    {% endif %}
 
-{% for member in team %}
+                    <div class="card-body text-center">
 
-<div class="col-lg-4 col-md-6">
+                        <h4 class="fw-bold mb-1">
+                            {{ member.name }}
+                        </h4>
 
-<div class="focus-card " style="height: 100%;">
+                        <p class="text-success fw-semibold mb-3">
+                            {{ member.position }}
+                        </p>
 
-{% if member.photo %}
+                        <p class="text-muted">
+                            {{ member.biography|truncatewords:20 }}
+                        </p>
 
-<img src="{{ member.photo.url }}"
-class="service-img"
-alt="{{ member.name }}">
+                        <a href="{% url 'team_detail' member.id %}"
+                           class="btn btn-success rounded-pill px-4">
 
-{% else %}
+                            View Profile
 
-<img src="{% static 'images/research.jpeg' %}"
-class="service-img"
-alt="{{ member.name }}">
+                        </a>
 
-{% endif %}
+                    </div>
 
-<div class="card-body text-center">
+                </div>
 
-<h4>
+            </div>
 
-{{ member.name }}
+            {% empty %}
 
-</h4>
+            <div class="col-12 text-center">
 
-<h6 class="text-success">
+                <h4>No team members available.</h4>
 
-{{ member.position }}
+            </div>
 
-</h6>
+            {% endfor %}
 
-<a href="{% url 'team_detail' member.id %}"
+        </div>
 
-class="btn btn-success">
-
-View Profile
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-{% empty %}
-
-<div class="col-12 text-center">
-
-<h4>
-
-Our team profiles will be available soon.
-
-</h4>
-
-</div>
-
-{% endfor %}
-
-</div>
-
-</div>
+    </div>
 
 </section>
-
-
 
 <!-- ================= CTA ================= -->
 
