@@ -23,20 +23,31 @@ class ResearchAdmin(admin.ModelAdmin):
         "description"
     )
 
+
 @admin.register(TeamMember)
 class TeamMemberAdmin(admin.ModelAdmin):
 
     list_display = (
         "name",
         "position",
-        "created_at"
+        "is_active",
+        "display_order",
+    )
+
+    list_filter = (
+        "is_active",
     )
 
     search_fields = (
         "name",
-        "position"
+        "position",
+        "expertise",
     )
 
+    ordering = (
+        "display_order",
+    )
+    
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
 

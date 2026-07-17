@@ -11,27 +11,60 @@
         <div class="col-md-4">
 
             {% if member.photo %}
-            <img
-                src="{{ member.photo.url }}"
-                class="img-fluid rounded shadow"
-                alt="{{ member.name }}">
+            <img src="{{ member.photo.url }}" class="img-fluid rounded shadow" alt="{{ member.name }}">
             {% endif %}
 
         </div>
 
         <div class="col-md-8">
 
-            <h1>{{ member.name }}</h1>
+            <h2>{{ member.name }}</h2>
 
-            <h4 class="text-success">
-                {{ member.position }}
-            </h4>
+            <h5>{{ member.position }}</h5>
+
+            <p>{{ member.biography|linebreaks }}</p>
+
+            <div class="mt-4">
+
+                {% if member.email %}
+                <a href="mailto:{{ member.email }}" class="btn btn-success">
+                    Email
+                </a>
+                {% endif %}
+
+                {% if member.linkedin %}
+                <a href="{{ member.linkedin }}" target="_blank" class="btn btn-outline-success">
+                    LinkedIn
+                </a>
+                {% endif %}
+
+                {% if member.google_scholar %}
+                <a href="{{ member.google_scholar }}" target="_blank" class="btn btn-outline-success">
+                    Google Scholar
+                </a>
+                {% endif %}
+
+                {% if member.researchgate %}
+                <a href="{{ member.researchgate }}" target="_blank" class="btn btn-outline-success">
+                    ResearchGate
+                </a>
+                {% endif %}
+
+                {% if member.orcid %}
+                <a href="{{ member.orcid }}" target="_blank" class="btn btn-outline-success">
+                    ORCID
+                </a>
+                {% endif %}
+
+                {% if member.website %}
+                <a href="{{ member.website }}" target="_blank" class="btn btn-outline-success">
+                    Website
+                </a>
+                {% endif %}
+
+            </div>
 
             <hr>
-
-            <p>
-                {{ member.biography }}
-            </p>
 
             <a href="{% url 'about' %}" class="btn btn-secondary">
                 ← Back to Team
