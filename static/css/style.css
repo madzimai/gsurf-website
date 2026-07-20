@@ -920,3 +920,30 @@ CONTACT PAGE
     box-shadow:0 15px 40px rgba(0,0,0,.08);
 
 }
+.news-content{
+    font-size:1.1rem;
+    line-height:1.9;
+    color:#444;
+}
+
+.news-content p{
+    margin-bottom:20px;
+}
+
+.news-content h2,
+.news-content h3{
+    color:#1d7f4e;
+    margin-top:35px;
+}
+
+.news-content ul{
+    padding-left:20px;
+}
+
+.news-content li{
+    margin-bottom:10px;
+}
+
+.card img{
+    object-fit:cover;
+}
