@@ -166,3 +166,35 @@ def dashboard(request):
         "dashboard.html",
         context,
     )
+
+from django.shortcuts import render, get_object_or_404
+from .models import News
+
+
+def news(request):
+    articles = News.objects.order_by("-published_date")
+
+    return render(request, "news.html", {
+        "articles": articles
+    })
+
+
+def news_detail(request, id):
+
+    article = get_object_or_404(
+        News,
+        id=id
+    )
+
+    latest_news = News.objects.exclude(
+        id=id
+    ).order_by("-published_date")[:3]
+
+    return render(
+        request,
+        "news_detail.html",
+        {
+            "article": article,
+            "latest_news": latest_news,
+        },
+    )

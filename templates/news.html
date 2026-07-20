@@ -66,21 +66,17 @@ class="card-img-top">
 
 <p>
 
-{{ article.content|truncatewords:25 }}
+{{ article.content|truncatewords:40 }}
 
 </p>
 
 
-<a href="#"
-class="btn btn-primary">
+<a href="{% url 'news_detail' article.id %}"
+   class="btn btn-success rounded-pill px-4">
 
-Read More
+    Read Full Story
 
 </a>
-
-
-</div>
-
 
 </div>
 

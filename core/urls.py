@@ -14,6 +14,7 @@ urlpatterns = [
     path("projects/<slug:slug>/",views.project_detail,name="project_detail"),
     path("dashboard/", views.dashboard, name="dashboard"),
     path("login/",auth_views.LoginView.as_view(template_name="login.html"),name="login",),
+    path("news/<int:id>/", views.news_detail, name="news_detail"),
 
 path(
     "logout/",
