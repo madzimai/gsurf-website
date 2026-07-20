@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Research, TeamMember, Service, News, Project
+from .models import Research, TeamMember, Service, News, Project, ContactMessage
 from django.contrib.auth.decorators import login_required
 
 def home(request):
