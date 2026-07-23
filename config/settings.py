@@ -26,9 +26,11 @@ SECRET_KEY = 'django-insecure-u#tli31%qscj1vsx05(v8ni4!+fqec*8%(8k#0azh8ol)tiio-
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
+    "gsurfglobal.org",
+    "www.gsurfglobal.org",
     ".onrender.com",
+    "127.0.0.1",
+    "localhost",
 ]
 
 
@@ -138,3 +140,9 @@ MEDIA_ROOT = BASE_DIR / "media"
 LOGIN_REDIRECT_URL = "dashboard"
 LOGOUT_REDIRECT_URL = "home"
 LOGIN_URL = "login"
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://gsurfglobal.org",
+    "https://www.gsurfglobal.org",
+    "https://gsurf-website.onrender.com",
+]
